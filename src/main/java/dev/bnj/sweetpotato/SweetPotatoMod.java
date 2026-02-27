@@ -2,10 +2,11 @@ package dev.bnj.sweetpotato;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ExampleMod implements ModInitializer {
+public class SweetPotatoMod implements ModInitializer {
 	public static final String MOD_ID = "sweetpotato";
 
 	// This logger is used to write text to the console and the log file.
@@ -13,12 +14,10 @@ public class ExampleMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+	public static final Item SWEET_POTATO = SweetPotato.registerSweetPotato();
+
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
-
-		LOGGER.info("Hello Fabric world!");
+		SweetPotato.initialize();
 	}
 }

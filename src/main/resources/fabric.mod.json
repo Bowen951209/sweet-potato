@@ -17,7 +17,7 @@
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"dev.bnj.sweetpotato.ExampleMod"
+			"dev.bnj.sweetpotato.SweetPotatoMod"
 		],
 		"client": [
 			"dev.bnj.sweetpotato.ExampleModClient"
