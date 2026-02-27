@@ -1,31 +1,32 @@
 {
 	"schemaVersion": 1,
-	"id": "modid",
+	"id": "sweetpotato",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Sweet Potato",
+	"description": "Bowen & Julie's Sweet Potato!",
 	"authors": [
-		"Me!"
+		"bowen951209",
+		"julie970403"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/modid/icon.png",
+	"icon": "assets/sweetpotato/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
-			"com.example.ExampleMod"
+			"dev.bnj.sweetpotato.ExampleMod"
 		],
 		"client": [
-			"com.example.ExampleModClient"
+			"dev.bnj.sweetpotato.ExampleModClient"
 		]
 	},
 	"mixins": [
-		"modid.mixins.json",
+		"sweetpotato.mixins.json",
 		{
-			"config": "modid.client.mixins.json",
+			"config": "sweetpotato.client.mixins.json",
 			"environment": "client"
 		}
 	],

@@ -1,4 +1,4 @@
-package com.example;
+package dev.bnj.sweetpotato;
 
 import net.fabricmc.api.ClientModInitializer;
 
