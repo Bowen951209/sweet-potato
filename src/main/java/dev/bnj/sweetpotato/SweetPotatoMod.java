@@ -14,10 +14,11 @@ public class SweetPotatoMod implements ModInitializer {
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static final Item SWEET_POTATO = SweetPotato.registerSweetPotato();
+	public static final Item SWEET_POTATO = ModItems.register("sweet_potato");
+	public static final Item BAKED_SWEET_POTATO = ModItems.register("baked_sweet_potato");
 
 	@Override
 	public void onInitialize() {
-		SweetPotato.initialize();
+		ModItems.initialize();
 	}
 }
