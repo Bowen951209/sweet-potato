@@ -2,6 +2,9 @@ package dev.bnj.sweetpotato;
 
 import net.fabricmc.api.ModInitializer;
 
+import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
+import net.minecraft.world.entity.npc.villager.VillagerProfession;
+import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.Item;
 import org.slf4j.Logger;
@@ -27,5 +30,11 @@ public class SweetPotatoMod implements ModInitializer {
     @Override
     public void onInitialize() {
         ModItems.initialize();
+
+        // Villager trade
+        TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
+            factories.add(new VillagerTrades.EmeraldForItems(SWEET_POTATO, 26, 16, 2));
+            factories.add(new VillagerTrades.EmeraldForItems(BAKED_SWEET_POTATO, 22, 16, 2));
+        });
     }
 }
