@@ -6,7 +6,13 @@ import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.world.entity.npc.villager.VillagerProfession;
 import net.minecraft.world.entity.npc.villager.VillagerTrades;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -18,18 +24,33 @@ public class SweetPotatoMod implements ModInitializer {
     // That way, it's clear which mod wrote info, warnings, and errors.
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-    public static final Item SWEET_POTATO = ModItems.register_food(
+    public static final Block SWEET_POTATOES = ModBlocks.register(
+            "sweet_potatoes",
+            SweetPotatoBlock::new,
+            BlockBehaviour.Properties
+                    .of()
+                    .mapColor(MapColor.PLANT)
+                    .noCollision()
+                    .randomTicks()
+                    .instabreak()
+                    .sound(SoundType.CROP)
+                    .pushReaction(PushReaction.DESTROY),
+            true);
+    public static final Item SWEET_POTATO = ModItems.register(
             "sweet_potato",
-            new FoodProperties.Builder().nutrition(1).saturationModifier(0.3F).build()
+            properties -> new BlockItem(SWEET_POTATOES, properties.useItemDescriptionPrefix()),
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(1).saturationModifier(0.3F).build())
     );
-    public static final Item BAKED_SWEET_POTATO = ModItems.register_food(
+    public static final Item BAKED_SWEET_POTATO = ModItems.register(
             "baked_sweet_potato",
-            new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F).build()
+            Item::new,
+            new Item.Properties().food(new FoodProperties.Builder().nutrition(5).saturationModifier(0.6F).build())
     );
 
     @Override
     public void onInitialize() {
         ModItems.initialize();
+        ModBlocks.initialize();
 
         // Villager trade
         TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {

@@ -20,7 +20,7 @@
 			"dev.bnj.sweetpotato.SweetPotatoMod"
 		],
 		"client": [
-			"dev.bnj.sweetpotato.ExampleModClient"
+			"dev.bnj.sweetpotato.SweetPotatoClient"
 		]
 	},
 	"mixins": [
