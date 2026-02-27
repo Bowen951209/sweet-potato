@@ -19,7 +19,7 @@
       "model": "sweetpotato:block/sweet_potatoes_stage2"
     },
     "age=6": {
-      "model": "sweetpotato:block/sweet_potatoes_stage2"
+      "model": "sweetpotato:block/sweet_potatoes_stage3"
     },
     "age=7": {
       "model": "sweetpotato:block/sweet_potatoes_stage3"
