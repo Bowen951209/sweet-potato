@@ -10,7 +10,7 @@
       "bonus_rolls": 0.0,
       "entries": [
         {
-          "type": "sweetpotato:item",
+          "type": "minecraft:item",
           "name": "sweetpotato:sweet_potato"
         }
       ],
@@ -29,7 +29,7 @@
       ],
       "entries": [
         {
-          "type": "sweetpotato:item",
+          "type": "minecraft:item",
           "functions": [
             {
               "enchantment": "minecraft:fortune",
