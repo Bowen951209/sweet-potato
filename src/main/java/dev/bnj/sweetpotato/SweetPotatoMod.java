@@ -35,7 +35,7 @@ public class SweetPotatoMod implements ModInitializer {
                     .instabreak()
                     .sound(SoundType.CROP)
                     .pushReaction(PushReaction.DESTROY),
-            true);
+            false);
     public static final Item SWEET_POTATO = ModItems.register(
             "sweet_potato",
             properties -> new BlockItem(SWEET_POTATOES, properties.useItemDescriptionPrefix()),
